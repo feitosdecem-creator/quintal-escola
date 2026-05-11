@@ -105,6 +105,17 @@ body[data-grain="true"]::before {
   display: flex; align-items: center; gap: 12px;
   text-decoration: none;
 }
+.brand--img {
+  gap: 0;
+}
+.brand__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+.brand__logo--footer {
+  height: 56px;
+}
 .brand__mark {
   width: 44px; height: 44px;
   background: var(--primary);
