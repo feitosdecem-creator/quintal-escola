@@ -221,35 +221,19 @@ body[data-grain="true"]::before {
 }
 .hero__bg {
   position: absolute; inset: 0;
-  background: linear-gradient(150deg, #2C3A20 0%, #4A6741 45%, #7A5230 100%);
-  background-size: cover;
-  background-position: center 20%;
   background-color: #2C3A20;
+  background-size: cover;
+  background-position: center center;
   will-change: transform;
 }
 .hero__overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(
     to top,
-    rgba(26,14,6,0.65) 0%,
-    rgba(26,14,6,0.22) 45%,
-    rgba(26,14,6,0.04) 100%
+    rgba(26,14,6,0.55) 0%,
+    rgba(26,14,6,0.15) 40%,
+    transparent 70%
   );
-}
-.hero__text-shade {
-  position: absolute; inset: 0; z-index: 2;
-  background:
-    linear-gradient(to right,
-      rgba(6,3,1,0.78) 0%,
-      rgba(6,3,1,0.55) 22%,
-      rgba(6,3,1,0.18) 50%,
-      transparent 68%
-    ),
-    linear-gradient(to top,
-      rgba(6,3,1,0.50) 0%,
-      transparent 32%
-    );
-  pointer-events: none;
 }
 .hero__inner {
   position: relative; z-index: 3;
@@ -306,38 +290,6 @@ body[data-grain="true"]::before {
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero .btn--cream { box-shadow: 0 4px 24px rgba(26,14,6,0.45); }
 
-/* Parallax wrappers — JS moves these, CSS anims run on children */
-.hero__parallax-layer,
-.hero__ghost-wrapper {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  will-change: transform;
-}
-.hero__parallax-layer { z-index: 4; }
-.hero__ghost-wrapper   { z-index: 2; }
-
-/* Ghost flower — cream mandala, inside ghost-wrapper */
-.hero__flora--ghost {
-  position: absolute;
-  bottom: 20px; left: -100px;
-  width: 520px; height: 520px;
-  color: var(--cream);
-  opacity: 0.05;
-  pointer-events: none;
-  animation: ghostPulse 16s ease-in-out infinite;
-}
-
-/* External SVG flora layer — 76% scale, right-anchored */
-.hero__flora-layer {
-  position: absolute;
-  right: -3%; top: -2%;
-  width: 76%; height: 104%;
-  object-fit: fill;
-  pointer-events: none;
-  animation: floatFlora 14s ease-in-out infinite;
-}
-
 /* Torn paper edge */
 .hero__torn {
   position: absolute;
@@ -348,21 +300,10 @@ body[data-grain="true"]::before {
 }
 .hero__torn svg { display: block; width: 100%; }
 
-@keyframes floatFlora {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50%       { transform: translateY(-14px) rotate(0.8deg); }
-}
-@keyframes ghostPulse {
-  0%, 100% { opacity: 0.055; transform: scale(1) rotate(0deg); }
-  50%      { opacity: 0.08; transform: scale(1.05) rotate(3deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__flora-layer, .hero__flora--ghost { animation: none !important; }
-}
 @media (max-width: 880px) {
   .hero { height: 100svh; min-height: 540px; }
   .hero__inner { padding: 24px 0 80px; }
-  .hero__flora--ghost { width: 360px; left: -80px; }
+  .hero__bg { background-position: center center; }
 }
 @media (max-width: 480px) {
   .hero__inner { padding-bottom: 60px; }
