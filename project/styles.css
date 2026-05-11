@@ -309,7 +309,6 @@ body[data-grain="true"]::before {
   object-fit: fill;
   pointer-events: none;
   z-index: 4;
-  mix-blend-mode: multiply;
   animation: floatFlora 10s ease-in-out infinite;
 }
 
