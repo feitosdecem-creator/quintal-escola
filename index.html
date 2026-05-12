@@ -3,76 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quintal Escola — Um quintal maior que o mundo</title>
-<meta name="description" content="Educação infantil Reggio Emilia em Ipatinga, MG. Da descoberta ao protagonismo — dos 6 meses aos 5 anos.">
-<link rel="stylesheet" href="project/styles.css">
+<title>Quintal — Um quintal maior que o mundo</title>
+<meta name="description" content="Educação infantil com abordagem Reggio Emilia em Ipatinga, MG. Da descoberta ao protagonismo — dos 6 meses aos 5 anos.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="project/tokens.css">
+<link rel="stylesheet" href="project/styles.css">
+<script src="project/image-slot.js"></script>
 </head>
-<body data-grain="true" data-quilt-hero="false" data-motif-density="medium" data-display-font="Fraunces" data-primary="#C4622D">
+<body>
 
-<!-- ============================================================
-     SHARED INLINE SVG SYMBOLS (motifs + icons)
-     ============================================================ -->
+<!-- Shared SVG symbols -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-leaf" viewBox="0 0 64 64">
-      <path d="M52 8C30 8 14 22 12 42c-1 8 2 14 8 14 22 0 38-14 40-34 1-8-2-14-8-14z" fill="currentColor"/>
-      <path d="M16 56C26 40 36 28 50 16" stroke="rgba(44,26,14,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <polyline points="14 6 20 12 14 18"/>
     </symbol>
-    <symbol id="i-asterisk" viewBox="0 0 64 64">
-      <g stroke="currentColor" stroke-width="6" stroke-linecap="round">
-        <line x1="32" y1="8" x2="32" y2="56"/>
-        <line x1="8" y1="32" x2="56" y2="32"/>
-        <line x1="14" y1="14" x2="50" y2="50"/>
-        <line x1="50" y1="14" x2="14" y2="50"/>
+    <symbol id="i-flower" viewBox="0 0 64 64">
+      <g fill="currentColor">
+        <ellipse cx="32" cy="14" rx="8" ry="12"/>
+        <ellipse cx="50" cy="32" rx="12" ry="8"/>
+        <ellipse cx="32" cy="50" rx="8" ry="12"/>
+        <ellipse cx="14" cy="32" rx="12" ry="8"/>
       </g>
+      <circle cx="32" cy="32" r="5" fill="#F6F0E5"/>
     </symbol>
-    <symbol id="i-spiral" viewBox="0 0 64 64">
-      <path d="M32 32 m-2 0 a2 2 0 1 1 4 0 a6 6 0 1 1 -6 -6 a10 10 0 1 1 10 10 a14 14 0 1 1 -14 -14 a18 18 0 1 1 18 18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <symbol id="i-hand-arrow" viewBox="0 0 40 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 4 Q 16 22 34 12"/>
+      <polyline points="28 4 34 12 26 16"/>
     </symbol>
-    <symbol id="i-sun" viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="12" fill="currentColor"/>
-      <g stroke="currentColor" stroke-width="4" stroke-linecap="round">
-        <line x1="32" y1="4" x2="32" y2="14"/>
-        <line x1="32" y1="50" x2="32" y2="60"/>
-        <line x1="4" y1="32" x2="14" y2="32"/>
-        <line x1="50" y1="32" x2="60" y2="32"/>
-        <line x1="12" y1="12" x2="19" y2="19"/>
-        <line x1="45" y1="45" x2="52" y2="52"/>
-        <line x1="52" y1="12" x2="45" y2="19"/>
-        <line x1="19" y1="45" x2="12" y2="52"/>
-      </g>
-    </symbol>
-    <symbol id="i-heart" viewBox="0 0 64 64">
-      <path d="M32 56s-22-12-22-30a10 10 0 0 1 22-7 10 10 0 0 1 22 7c0 18-22 30-22 30z" fill="currentColor"/>
-    </symbol>
-    <symbol id="i-wave" viewBox="0 0 64 64">
-      <path d="M4 32 Q16 12 32 32 T60 32" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none"/>
-    </symbol>
-    <symbol id="i-whatsapp" viewBox="0 0 24 24">
-      <path d="M20.5 3.5A11 11 0 0 0 3 17l-1 5 5-1a11 11 0 0 0 13.5-17.5zM12 20a8 8 0 0 1-4-1.1l-.3-.2-3 .6.6-3-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4 0-.6.3a2.4 2.4 0 0 0-.7 1.7c0 1 .7 2 .8 2.2 0 .2 1.5 2.4 3.7 3.4 1.4.6 2 .6 2.6.5.4 0 1.2-.5 1.4-1 .2-.5.2-1 .1-1z" fill="currentColor"/>
-    </symbol>
-    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="3" width="18" height="18" rx="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
-    </symbol>
-    <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="5" y1="12" x2="19" y2="12"/>
-      <polyline points="13 6 19 12 13 18"/>
-    </symbol>
-    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
-      <circle cx="12" cy="12" r="3"/>
-    </symbol>
-    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 11l9-7 9 7v9a2 2 0 0 1-2 2h-3v-7h-8v7H5a2 2 0 0 1-2-2v-9z"/>
-    </symbol>
-    <symbol id="i-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="9" cy="8" r="3"/>
-      <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
-      <circle cx="17" cy="9" r="2.5"/>
-      <path d="M15 20c0-2 1-3.5 3-4"/>
+    <symbol id="i-curve-arrow" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 12 C 24 8, 60 18, 56 52"/>
+      <polyline points="44 44 56 52 64 40"/>
     </symbol>
   </defs>
 </svg>
@@ -81,511 +43,299 @@
 <!-- ============================================================
      HEADER
      ============================================================ -->
-<header class="site-header" id="header">
+<header class="site-header">
   <div class="container site-header__inner">
-    <a class="brand brand--img" href="#top" aria-label="Quintal Escola — início">
-      <img src="project/assets/logo-quintal.png" alt="Quintal Escola" class="brand__logo">
+    <a class="brand" href="#top">
+      quintal<small>Ipatinga · MG</small>
     </a>
     <nav class="nav" id="nav">
       <a href="#filosofia">Filosofia</a>
-      <a href="#abordagem">Abordagem</a>
-      <a href="#vivencias">Vivências</a>
-      <a href="#faixas">Faixas etárias</a>
+      <a href="#valores">A escola</a>
+      <a href="#metodologia">Metodologia</a>
       <a href="#visita">Visita</a>
     </nav>
-    <a class="btn header-cta-desktop" href="https://wa.me/5531995361003" target="_blank" rel="noopener">
-      <svg width="18" height="18"><use href="#i-whatsapp"/></svg>
-      Agendar visita
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span></button>
   </div>
 </header>
 
 
 <!-- ============================================================
-     HERO — editorial modular grid
+     HERO
      ============================================================ -->
 <section class="hero" id="top">
-  <div class="hero__grid">
-
-    <!-- BLOCO ESQUERDO: logo + título + CTA -->
-    <div class="hero__left">
-      <img src="project/assets/Doodle-esquerdo.svg" class="hero__deco-overlay" aria-hidden="true" alt="">
-      <div class="hero__left-top">
-        <a href="#top" aria-label="Quintal Escola">
-          <img src="project/assets/logo-quintal.png" alt="Quintal Escola" class="hero__brand-logo">
-        </a>
-        <span class="hero__eyebrow">Reggio Emilia · Ipatinga</span>
-      </div>
-
-      <h1 class="hero__title display">
-        Um quintal<br><em>maior que</em><br>o mundo.
-      </h1>
-
-      <div class="hero__left-bottom">
-        <p class="hero__sub">Da descoberta ao protagonismo —<br>dos 6 meses aos 5 anos.</p>
-        <a class="btn-hero" href="https://wa.me/5531995361003" target="_blank" rel="noopener">
-          <svg width="18" height="18"><use href="#i-whatsapp"/></svg>
-          Agendar uma visita
-        </a>
-        <div class="hero__tags">
-          <span class="hero__tag">Educação infantil</span>
-          <span class="hero__tag">6 meses → 5 anos</span>
-          <span class="hero__tag">desde 2021</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOCO CENTRAL: fotografia -->
-    <div class="hero__photo-card">
-      <img src="project/assets/hero-principal.png"
-           alt="Criança explorando a natureza no quintal" loading="eager">
-      <img src="project/assets/doodle-meio.svg" class="hero__deco-overlay" aria-hidden="true" alt="">
-      <div class="hero__photo-badge">
-        <strong>Quintal Escola</strong>
-        Ipatinga, MG
-      </div>
-    </div>
-
-    <!-- COLUNA DIREITA: nav + deco + info -->
-    <div class="hero__right">
-      <nav class="hero__nav-card" aria-label="Navegação principal">
-        <a href="#filosofia">Filosofia</a>
-        <a href="#abordagem">Abordagem</a>
-        <a href="#vivencias">Vivências</a>
-        <a href="#faixas">Faixas etárias</a>
-        <a href="#visita">Visita</a>
-      </nav>
-
-      <div class="hero__deco" aria-hidden="true">
-        <img src="project/assets/doodle-direito.svg" class="hero__deco-img" alt="">
-      </div>
-
-      <div class="hero__info-card">
-        <span class="hero__info-label">Faixas etárias</span>
-        <strong class="hero__info-big">6m → 5 anos</strong>
-        <span class="hero__info-sub">Abordagem Reggio Emilia</span>
-      </div>
-    </div>
-
-  </div><!-- /hero__grid -->
-
-  <!-- Divisória de papel rasgado -->
-  <div class="hero__torn" aria-hidden="true">
-    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,72 L0,30 Q10,20 22,28 Q35,36 48,18 Q62,4 78,22 Q90,36 106,16 Q122,2 140,20 Q152,34 168,14 Q184,2 202,20 Q218,36 236,18 Q252,6 270,22 Q284,36 300,14 Q318,2 338,22 Q350,38 366,20 Q384,4 402,22 Q416,38 434,18 Q452,2 470,22 Q484,40 504,20 Q520,4 538,22 Q552,38 568,16 Q586,2 604,20 Q618,36 636,18 Q652,6 670,22 Q686,40 704,20 Q720,4 738,24 Q752,42 772,22 Q790,4 808,22 Q822,38 840,20 Q858,4 876,22 Q890,38 910,18 Q928,2 946,22 Q960,40 980,20 Q998,4 1016,22 Q1030,38 1050,18 Q1068,4 1086,22 Q1100,40 1120,20 Q1138,4 1156,22 Q1170,38 1188,18 Q1206,4 1224,22 Q1238,38 1258,18 Q1276,4 1294,22 Q1308,38 1328,20 Q1346,6 1364,22 Q1378,36 1394,20 Q1410,8 1428,22 Q1435,28 1440,24 L1440,72 Z" fill="var(--cream)"/>
-    </svg>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     RIBBON 1
-     ============================================================ -->
-<div class="ribbon" aria-hidden="true">
-  <div class="ribbon__track">
-    <span>Brincar é a aula <span class="dot"></span> Cem linguagens das crianças <span class="dot"></span> A natureza é currículo <span class="dot"></span> Feitos de cem <span class="dot"></span> </span>
-    <span>Brincar é a aula <span class="dot"></span> Cem linguagens das crianças <span class="dot"></span> A natureza é currículo <span class="dot"></span> Feitos de cem <span class="dot"></span> </span>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     SECTION: FILOSOFIA — "O que nos move"
-     ============================================================ -->
-<section class="philosophy" id="filosofia">
-  <svg class="philosophy__motif philosophy__motif--1" viewBox="0 0 64 64" style="color: var(--sun)" aria-hidden="true"><use href="#i-asterisk"/></svg>
-  <svg class="philosophy__motif philosophy__motif--2" viewBox="0 0 64 64" style="color: var(--cream)" aria-hidden="true"><use href="#i-spiral"/></svg>
-
   <div class="container">
-    <div class="philosophy__head">
-      <h2 class="philosophy__title display reveal">
-        O que <em>nos move</em>
-      </h2>
-      <p class="philosophy__intro reveal">
-        Três frases que a gente repete todo dia. São o tipo de coisa simples que organiza tudo o que acontece dentro do nosso quintal — da rotina às escolhas pedagógicas.
-      </p>
-    </div>
+    <div class="hero__grid">
 
-    <div class="philosophy__cards">
-      <article class="phil-card reveal">
-        <svg class="phil-card__doodle" style="color: var(--primary)" aria-hidden="true"><use href="#i-sun"/></svg>
-        <div class="phil-card__num">— um —</div>
-        <p class="phil-card__quote">Brincar não é pausa da aula. <em>Brincar é a aula.</em></p>
-        <span class="phil-card__caption">é levado a sério, sempre</span>
-      </article>
-      <article class="phil-card reveal">
-        <svg class="phil-card__doodle" style="color: var(--cream)" aria-hidden="true"><use href="#i-leaf"/></svg>
-        <div class="phil-card__num">— dois —</div>
-        <p class="phil-card__quote">A natureza não é recreio. <em>É currículo.</em></p>
-        <span class="phil-card__caption">terra, água, vento, raiz</span>
-      </article>
-      <article class="phil-card reveal">
-        <svg class="phil-card__doodle" style="color: var(--primary-soft)" aria-hidden="true"><use href="#i-heart"/></svg>
-        <div class="phil-card__num">— três —</div>
-        <p class="phil-card__quote">Escutamos as <em>cem linguagens</em> das crianças.</p>
-        <span class="phil-card__caption">corpo, voz, traço, silêncio…</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SECTION: ABORDAGEM — Reggio Emilia
-     ============================================================ -->
-<section class="approach" id="abordagem">
-  <div class="container">
-    <div class="approach__grid">
-      <div class="approach__intro reveal">
-        <p class="eyebrow">Nossa abordagem</p>
-        <h2 class="approach__title display">
-          Reggio Emilia,<br>traduzido para o <em>chão da escola</em>.
-        </h2>
-        <div class="approach__body">
-          <p>
-            A gente não recebe a criança como um copo a ser preenchido.
-            Recebe um sujeito <strong>capaz, curioso, cheio de teorias</strong> sobre o mundo.
-            Nosso trabalho é criar espaços, materiais e tempo para que essas teorias floresçam.
-          </p>
-          <p>
-            Inspirados pela escola de Reggio Emilia, na Itália, a gente desacelera o ritmo,
-            documenta os processos e devolve para as famílias o que vimos acontecer.
-            Sem apostila, sem fila, sem hora de ficar quieto.
-          </p>
+      <!-- Left block -->
+      <div class="hero__left">
+        <div class="hero__ribbon">
+          <span>Escola Quintal</span>
+          <span>Reggio Emilia · Ipatinga, MG</span>
         </div>
-      </div>
 
-      <div class="approach__pillars reveal">
-        <article class="pillar">
-          <div class="pillar__icon"><svg><use href="#i-eye"/></svg></div>
-          <div>
-            <h3 class="pillar__title">Documentação pedagógica</h3>
-            <p class="pillar__desc">Fotografamos, gravamos e escrevemos sobre o que as crianças investigam — para tornar visível o pensamento delas.</p>
-          </div>
-        </article>
-        <article class="pillar">
-          <div class="pillar__icon"><svg><use href="#i-home"/></svg></div>
-          <div>
-            <h3 class="pillar__title">Espaços que ensinam</h3>
-            <p class="pillar__desc">O ambiente é o terceiro educador: cantos pensados, materiais soltos, luz natural e convites para criar.</p>
-          </div>
-        </article>
-        <article class="pillar pillar--wide">
-          <div class="pillar__icon"><svg><use href="#i-people"/></svg></div>
-          <div>
-            <h3 class="pillar__title">Família como parceira</h3>
-            <p class="pillar__desc">Caminhamos juntos. Reuniões, ateliês de família, conversas frequentes — porque a criança é uma só.</p>
-          </div>
-        </article>
-        <article class="pillar pillar--alt">
-          <div class="pillar__icon"><svg><use href="#i-sun"/></svg></div>
-          <div>
-            <h3 class="pillar__title">Tempo sem pressa</h3>
-            <p class="pillar__desc">Os ritmos seguem a criança, não a agenda. Aqui, terminar o que se começou vale mais que cumprir um cronograma.</p>
-          </div>
-        </article>
-        <article class="pillar pillar--small">
-          <div class="pillar__icon"><svg><use href="#i-leaf"/></svg></div>
-          <div>
-            <h3 class="pillar__title">Ateliê e atelierista</h3>
-            <p class="pillar__desc">Um espaço dedicado às mãos: tinta, argila, fio, papel. E uma educadora artista que escuta cada gesto.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+        <h1 class="hero__title">
+          Um quintal<br>
+          <em>maior</em> que<br>
+          o mundo.
+        </h1>
 
-
-<!-- ============================================================
-     SECTION: VIVÊNCIAS — diferenciais (lista vertical editorial)
-     ============================================================ -->
-<section class="experiences" id="vivencias">
-  <div class="container">
-    <div class="experiences__head reveal">
-      <p class="eyebrow">As vivências do quintal</p>
-      <h2 class="experiences__title display">
-        Seis caminhos<br>de <em>descoberta</em>.
-      </h2>
-      <p class="experiences__sub">
-        Cada criança encontra o seu jeito de existir aqui. Os caminhos abaixo se cruzam o tempo todo, do berçário ao Pré II — devagar, com mãos sujas e olhos atentos.
-      </p>
-    </div>
-
-    <ol class="exp-list">
-      <li class="exp-item reveal">
-        <div class="exp-item__num">01</div>
-        <div>
-          <h3 class="exp-item__title">Educação bilíngue</h3>
-        </div>
-        <p class="exp-item__desc">Português e inglês convivem como duas paisagens — sem tradução forçada, com canções, histórias e brincadeiras de cada lado.</p>
-      </li>
-      <li class="exp-item reveal">
-        <div class="exp-item__num">02</div>
-        <div>
-          <h3 class="exp-item__title">Yoga &amp; corpo</h3>
-        </div>
-        <p class="exp-item__desc">Respirar, alongar, escutar o próprio coração. Yoga aqui é um modo de habitar o corpo com calma — não um exercício.</p>
-      </li>
-      <li class="exp-item reveal">
-        <div class="exp-item__num">03</div>
-        <div>
-          <h3 class="exp-item__title">Marcenaria infantil</h3>
-        </div>
-        <p class="exp-item__desc">Martelo, lixa, prego, cheiro de pinus. Os pequenos descobrem que podem construir o que imaginam — com ferramentas de verdade.</p>
-      </li>
-      <li class="exp-item reveal">
-        <div class="exp-item__num">04</div>
-        <div>
-          <h3 class="exp-item__title">Horta e cozinha</h3>
-        </div>
-        <p class="exp-item__desc">Da semente ao prato. Plantamos, regamos, colhemos e comemos juntos — o que dá trabalho, dá afeto.</p>
-      </li>
-      <li class="exp-item reveal">
-        <div class="exp-item__num">05</div>
-        <div>
-          <h3 class="exp-item__title">Ateliê de arte</h3>
-        </div>
-        <p class="exp-item__desc">Tinta, argila, papel, fio. O ateliê é um laboratório das cem linguagens — onde toda ideia merece um material à altura.</p>
-      </li>
-      <li class="exp-item reveal">
-        <div class="exp-item__num">06</div>
-        <div>
-          <h3 class="exp-item__title">Natureza diária</h3>
-        </div>
-        <p class="exp-item__desc">Sair, sempre. Mesmo no frio, mesmo na chuva fina. O quintal é a primeira sala de aula — não a última.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     RIBBON 2 (cream on ink)
-     ============================================================ -->
-<div class="ribbon ribbon--ink" aria-hidden="true">
-  <div class="ribbon__track">
-    <span>cem linguagens <span class="dot"></span> mãos sujas <span class="dot"></span> tempo devagar <span class="dot"></span> escuta atenta <span class="dot"></span> protagonismo <span class="dot"></span> </span>
-    <span>cem linguagens <span class="dot"></span> mãos sujas <span class="dot"></span> tempo devagar <span class="dot"></span> escuta atenta <span class="dot"></span> protagonismo <span class="dot"></span> </span>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     SECTION: FAIXAS ETÁRIAS
-     ============================================================ -->
-<section class="ages" id="faixas">
-  <div class="container">
-    <div class="ages__head reveal">
-      <h2 class="ages__title display">
-        Para cada idade,<br>um <em>jeito</em> de quintal.
-      </h2>
-      <p class="ages__caption">cinco etapas, um percurso só. <em>clique nas cartas</em></p>
-    </div>
-
-    <div class="ages__grid">
-      <article class="age-card reveal" data-age="bercario" tabindex="0" role="button" aria-pressed="false">
-        <div class="age-card__inner">
-          <div class="age-card__face age-card__face--front">
-            <div class="age-card__photo age-card__photo--1" aria-hidden="true">
-              <svg viewBox="0 0 120 120"><circle cx="60" cy="50" r="22" fill="#F5EFE6"/><path d="M30 90 Q60 70 90 90 L90 120 L30 120 Z" fill="#F5EFE6"/></svg>
-            </div>
-            <div class="age-card__name">Berçário</div>
-            <div class="age-card__age">6m → 1a</div>
-            <span class="age-card__hint">virar →</span>
-          </div>
-          <div class="age-card__face age-card__face--back">
-            <div class="age-card__num">01</div>
-            <p class="age-card__desc">Vínculo, ritmo do sono e primeiras descobertas sensoriais. Colo, sempre. Linguagem como afeto.</p>
-            <div class="age-card__dots"><span class="on"></span><span></span><span></span><span></span><span></span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="age-card reveal" data-age="mat1" tabindex="0" role="button" aria-pressed="false">
-        <div class="age-card__inner">
-          <div class="age-card__face age-card__face--front">
-            <div class="age-card__photo age-card__photo--2" aria-hidden="true">
-              <svg viewBox="0 0 120 120"><circle cx="60" cy="48" r="20" fill="#2C1A0E"/><path d="M32 92 Q60 74 88 92 L88 120 L32 120 Z" fill="#2C1A0E"/></svg>
-            </div>
-            <div class="age-card__name">Maternal I</div>
-            <div class="age-card__age">1 → 2 anos</div>
-            <span class="age-card__hint">virar →</span>
-          </div>
-          <div class="age-card__face age-card__face--back">
-            <div class="age-card__num">02</div>
-            <p class="age-card__desc">O corpo aprende a andar pelo mundo. Caixas, terra, água, palavras novas. Cada tropeço é um descobrimento.</p>
-            <div class="age-card__dots"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="age-card reveal" data-age="mat2" tabindex="0" role="button" aria-pressed="false">
-        <div class="age-card__inner">
-          <div class="age-card__face age-card__face--front">
-            <div class="age-card__photo age-card__photo--3" aria-hidden="true">
-              <svg viewBox="0 0 120 120"><circle cx="60" cy="48" r="20" fill="#2C1A0E"/><path d="M32 92 Q60 74 88 92 L88 120 L32 120 Z" fill="#2C1A0E"/></svg>
-            </div>
-            <div class="age-card__name">Maternal II</div>
-            <div class="age-card__age">2 → 3 anos</div>
-            <span class="age-card__hint">virar →</span>
-          </div>
-          <div class="age-card__face age-card__face--back">
-            <div class="age-card__num">03</div>
-            <p class="age-card__desc">A vida em grupo aparece. Brincar de faz-de-conta, dividir, esperar e narrar — as primeiras teorias sobre o outro.</p>
-            <div class="age-card__dots"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="age-card reveal" data-age="pre1" tabindex="0" role="button" aria-pressed="false">
-        <div class="age-card__inner">
-          <div class="age-card__face age-card__face--front">
-            <div class="age-card__photo age-card__photo--4" aria-hidden="true">
-              <svg viewBox="0 0 120 120"><circle cx="60" cy="48" r="20" fill="#F5EFE6"/><path d="M32 92 Q60 74 88 92 L88 120 L32 120 Z" fill="#F5EFE6"/></svg>
-            </div>
-            <div class="age-card__name">Pré I</div>
-            <div class="age-card__age">3 → 4 anos</div>
-            <span class="age-card__hint">virar →</span>
-          </div>
-          <div class="age-card__face age-card__face--back">
-            <div class="age-card__num">04</div>
-            <p class="age-card__desc">Projetos longos e investigações. As perguntas viram caminhos de pesquisa: por que? como? e se?</p>
-            <div class="age-card__dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="age-card reveal" data-age="pre2" tabindex="0" role="button" aria-pressed="false">
-        <div class="age-card__inner">
-          <div class="age-card__face age-card__face--front">
-            <div class="age-card__photo age-card__photo--5" aria-hidden="true">
-              <svg viewBox="0 0 120 120"><circle cx="60" cy="48" r="20" fill="#F5EFE6"/><path d="M32 92 Q60 74 88 92 L88 120 L32 120 Z" fill="#F5EFE6"/></svg>
-            </div>
-            <div class="age-card__name">Pré II</div>
-            <div class="age-card__age">4 → 5 anos</div>
-            <span class="age-card__hint">virar →</span>
-          </div>
-          <div class="age-card__face age-card__face--back">
-            <div class="age-card__num">05</div>
-            <p class="age-card__desc">Letras, números e o mundo: a criança autora, pronta para um próximo quintal. O começo de tudo o que vem depois.</p>
-            <div class="age-card__dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SECTION: DEPOIMENTOS (carrossel polaroid)
-     ============================================================ -->
-<section class="testimonials" id="depoimentos">
-  <div class="container">
-    <div class="testimonials__head reveal">
-      <h2 class="testimonials__title display">
-        O que as <em>famílias</em> contam.
-      </h2>
-    </div>
-  </div>
-
-  <div class="testimonials__viewport">
-    <div class="testimonials__marquee" id="tTrack">
-      <article class="polaroid">
-        <div class="polaroid__tape"></div>
-        <div class="polaroid__photo polaroid__photo--moss">
-          <svg style="color: var(--cream)" aria-hidden="true"><use href="#i-leaf"/></svg>
-        </div>
-        <p class="polaroid__quote">"A Helena saiu do berçário falando sobre as folhas que caíam no quintal. A escola virou linguagem em casa."</p>
-        <div class="polaroid__author">Mariana &amp; João <small>· 2 anos de escola</small></div>
-      </article>
-      <article class="polaroid">
-        <div class="polaroid__tape"></div>
-        <div class="polaroid__photo polaroid__photo--primary">
-          <svg style="color: var(--cream)" aria-hidden="true"><use href="#i-heart"/></svg>
-        </div>
-        <p class="polaroid__quote">"O que mais me toca é a documentação. Toda semana a gente recebe uma narrativa sobre quem nosso filho está sendo."</p>
-        <div class="polaroid__author">Camila <small>· 3 anos de escola</small></div>
-      </article>
-      <article class="polaroid">
-        <div class="polaroid__tape"></div>
-        <div class="polaroid__photo polaroid__photo--sun">
-          <svg style="color: var(--ink)" aria-hidden="true"><use href="#i-sun"/></svg>
-        </div>
-        <p class="polaroid__quote">"Aqui meu filho aprendeu a martelar antes de aprender a letra. Hoje, escreve sobre marcenaria. Tudo se conversa."</p>
-        <div class="polaroid__author">Rafael &amp; Bia <small>· 4 anos de escola</small></div>
-      </article>
-      <article class="polaroid">
-        <div class="polaroid__tape"></div>
-        <div class="polaroid__photo polaroid__photo--blush">
-          <svg style="color: var(--primary-deep)" aria-hidden="true"><use href="#i-spiral"/></svg>
-        </div>
-        <p class="polaroid__quote">"Procurávamos uma escola que respeitasse o tempo da Cecília. Encontramos um quintal inteiro."</p>
-        <div class="polaroid__author">Patrícia <small>· 1 ano de escola</small></div>
-      </article>
-      <article class="polaroid">
-        <div class="polaroid__tape"></div>
-        <div class="polaroid__photo polaroid__photo--leaf">
-          <svg style="color: var(--cream)" aria-hidden="true"><use href="#i-asterisk"/></svg>
-        </div>
-        <p class="polaroid__quote">"As reuniões parecem conversas entre amigos. A gente sai com mais perguntas — e isso é bom."</p>
-        <div class="polaroid__author">Família Lima <small>· 5 anos de escola</small></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SECTION: VISITA / LOCALIZAÇÃO + CTA FINAL
-     ============================================================ -->
-<section class="visit" id="visita">
-  <div class="container">
-    <div class="visit__grid">
-      <div class="reveal">
-        <h2 class="visit__title display">
-          Venha conhecer<br>o nosso <em>quintal</em>.
-        </h2>
-        <p class="visit__sub">
-          A melhor maneira de entender a escola é caminhar por ela. Marca um horário com a gente — sem formulário, sem compromisso. É só um oi no WhatsApp.
+        <p class="hero__sub">
+          Educação infantil com abordagem Reggio Emilia, em Ipatinga.
+          <strong>Da descoberta ao protagonismo</strong> — no ritmo de cada criança, dos 6 meses aos 5 anos.
         </p>
-        <a class="visit__cta" href="https://wa.me/5531995361003" target="_blank" rel="noopener">
-          <svg><use href="#i-whatsapp"/></svg>
-          (31) 99536-1003
-          <svg width="22" height="22"><use href="#i-arrow-r"/></svg>
-        </a>
-        <div class="visit__hand">
-          <svg width="40" height="22" viewBox="0 0 40 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
-            <path d="M2 4 Q 16 22 34 12"/>
-            <polyline points="28 4 34 12 26 16"/>
-          </svg>
-          a gente responde rápido!
+
+        <div class="hero__bottom">
+          <a class="btn btn--terra" href="https://wa.me/5531995361003" target="_blank" rel="noopener">
+            Agendar uma visita
+            <svg class="btn__arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <span class="hero__hand">
+            <svg aria-hidden="true"><use href="#i-hand-arrow"/></svg>
+            é só um oi no WhatsApp
+          </span>
         </div>
+
+        <!-- circular rotating stamp -->
+        <div class="hero__stamp" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <path id="circ" d="M 100, 100 m -78, 0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/>
+            </defs>
+            <text fill="currentColor" font-family="Quicksand, sans-serif" font-size="13" font-weight="600" letter-spacing="3">
+              <textPath href="#circ">FEITO DEVAGAR · DESDE 2021 · CEM LINGUAGENS · </textPath>
+            </text>
+          </svg>
+          <div>
+            <strong>desde<br>2021</strong>
+            <span>cinco anos</span>
+          </div>
+        </div>
+
+        <svg class="hero__flower" aria-hidden="true"><use href="#i-flower"/></svg>
       </div>
 
-      <aside class="visit__card reveal">
-        <p class="eyebrow">Onde a gente está</p>
-        <div class="visit__map" role="img" aria-label="Mapa simbólico de localização em Ipatinga, MG"></div>
-        <div class="visit__address">
-          <h4>Ipatinga, Minas Gerais</h4>
-          <p>Endereço completo enviado no agendamento da visita.</p>
+      <!-- Right photo block -->
+      <div class="hero__right">
+        <span class="hero__tape" aria-hidden="true"></span>
+        <span class="hero__sticker-num">★ 6 m → 5 anos</span>
+        <div class="hero__photo-frame">
+          <image-slot
+            id="hero-photo"
+            shape="rounded"
+            radius="20"
+            placeholder="Foto principal · criança em contato com a natureza"
+            src="project/assets/hero-principal.png"></image-slot>
         </div>
-        <div class="visit__schedule">
-          <div>
-            <strong>Horário</strong>
-            seg–sex · 7h30 às 17h30
-          </div>
-          <div>
-            <strong>Visitas</strong>
-            sob agendamento
-          </div>
-        </div>
-      </aside>
+        <span class="hero__caption">no quintal · ipatinga, mg</span>
+      </div>
+
     </div>
+
+    <svg class="hero__doodle hero__doodle--arrow" aria-hidden="true"><use href="#i-curve-arrow"/></svg>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EDITORIAL STRIP
+     ============================================================ -->
+<section class="editorial-strip" id="filosofia">
+  <div class="container">
+    <p class="editorial-strip__quote">
+      Aqui, o brincar é levado a sério.<br>
+      A gente acredita que a criança é <em>autora</em>,<br>
+      e que a natureza é a <u>primeira sala</u> de aula.
+    </p>
+    <span class="editorial-strip__sig">— escola quintal, ipatinga.</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     VALUES — three cards with personality
+     ============================================================ -->
+<section class="values" id="valores">
+  <div class="container">
+    <div class="values__head reveal">
+      <p class="eyebrow">O que nos move</p>
+      <h2>Três <em>gestos</em> que organizam<br>o nosso quintal.</h2>
+    </div>
+
+    <div class="values__grid">
+
+      <article class="value-card reveal">
+        <span class="value-card__badge">01 · um</span>
+        <div class="value-card__photo">
+          <image-slot
+            id="val-natureza"
+            shape="rounded"
+            radius="14"
+            placeholder="Natureza · folhas, terra, raiz"
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80&auto=format&fit=crop"></image-slot>
+        </div>
+        <h3 class="value-card__title"><em>Natureza</em><br>como currículo</h3>
+        <p class="value-card__text">Sair, sempre. Mãos na terra, pés descalços. O quintal é a primeira sala — não a última.</p>
+        <span class="value-card__hand">terra, água, vento, raiz</span>
+      </article>
+
+      <article class="value-card reveal">
+        <span class="value-card__badge">02 · dois</span>
+        <div class="value-card__photo">
+          <image-slot
+            id="val-investigacao"
+            shape="rounded"
+            radius="14"
+            placeholder="Investigação · mãos pesquisando"
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80&auto=format&fit=crop"></image-slot>
+        </div>
+        <h3 class="value-card__title"><em>Investigação</em><br>como caminho</h3>
+        <p class="value-card__text">Toda pergunta vira pesquisa. Documentamos os processos para tornar visível o pensamento das crianças.</p>
+        <span class="value-card__hand">por que? como? e se?</span>
+      </article>
+
+      <article class="value-card reveal">
+        <span class="value-card__badge">03 · três</span>
+        <div class="value-card__photo">
+          <image-slot
+            id="val-protagonismo"
+            shape="rounded"
+            radius="14"
+            placeholder="Protagonismo · criança autora"
+            src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80&auto=format&fit=crop"></image-slot>
+        </div>
+        <h3 class="value-card__title"><em>Protagonismo</em><br>como verbo</h3>
+        <p class="value-card__text">Cada um no seu ritmo, com tempo de terminar o que começou. Aqui ninguém apressa a infância.</p>
+        <span class="value-card__hand">a criança é autora</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section class="gallery">
+  <div class="container">
+    <div class="gallery__head reveal">
+      <div>
+        <p class="eyebrow eyebrow--olive">Caderno do quintal</p>
+        <h2>Pequenos dias <em>no quintal</em>.</h2>
+      </div>
+      <p>Cenas comuns que, juntas, formam um modo de viver a infância — sem pressa, com mãos sujas e olhos atentos.</p>
+    </div>
+
+    <div class="gallery__grid">
+      <div class="gallery__item gallery__item--a reveal">
+        <image-slot id="g-1" shape="rounded" radius="16"
+          placeholder="Foto principal"
+          src="https://images.unsplash.com/photo-1564429097439-e4dc8b8d8e85?w=1200&q=80&auto=format&fit=crop"></image-slot>
+        <span class="gallery__caption gallery__caption--1">no ateliê!</span>
+      </div>
+      <div class="gallery__item gallery__item--b reveal">
+        <image-slot id="g-2" shape="rounded" radius="16"
+          placeholder="Detalhe · mãos, tinta, papel"
+          src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=900&q=80&auto=format&fit=crop"></image-slot>
+        <span class="gallery__caption gallery__caption--2">mãos pequenas</span>
+      </div>
+      <div class="gallery__item gallery__item--c reveal">
+        <image-slot id="g-3" shape="rounded" radius="16"
+          placeholder="Vivência · horta, água, terra"
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80&auto=format&fit=crop"></image-slot>
+      </div>
+      <div class="gallery__item gallery__item--d reveal">
+        <image-slot id="g-4" shape="rounded" radius="16"
+          placeholder="Retrato · olhar curioso"
+          src="https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?w=800&q=80&auto=format&fit=crop"></image-slot>
+      </div>
+      <div class="gallery__item gallery__item--e reveal">
+        <image-slot id="g-5" shape="rounded" radius="16"
+          placeholder="Cena ampla · quintal e luz"
+          src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1200&q=80&auto=format&fit=crop"></image-slot>
+        <span class="gallery__caption gallery__caption--3">o quintal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     METHODOLOGY
+     ============================================================ -->
+<section class="method" id="metodologia">
+  <span class="method__shape method__shape--1" aria-hidden="true"></span>
+  <span class="method__shape method__shape--2" aria-hidden="true"></span>
+
+  <div class="container">
+    <div class="method__grid">
+
+      <div class="method__intro reveal">
+        <p class="eyebrow">A nossa metodologia</p>
+        <h2>Reggio Emilia,<br>traduzido para o <em>chão da escola</em>.</h2>
+        <p>A gente não recebe a criança como um copo a ser preenchido — recebe um sujeito capaz, curioso, cheio de teorias sobre o mundo.</p>
+        <p>Nosso trabalho é criar espaço, materiais e tempo para que essas teorias floresçam. Sem apostila, sem fila, sem hora de ficar quieto.</p>
+        <span class="method__sig">— a gente caminha junto.</span>
+      </div>
+
+      <ol class="method__list reveal">
+        <li class="method__item">
+          <span class="method__num">01</span>
+          <div>
+            <h3><em>Escuta</em></h3>
+            <p>Antes de ensinar, ouvir. Cada gesto, cada silêncio, cada pergunta — tudo é texto a ser lido com atenção.</p>
+          </div>
+        </li>
+        <li class="method__item">
+          <span class="method__num">02</span>
+          <div>
+            <h3><em>Autonomia</em></h3>
+            <p>A criança decide, escolhe, tenta, recomeça. O educador acompanha sem atalhar o caminho.</p>
+          </div>
+        </li>
+        <li class="method__item">
+          <span class="method__num">03</span>
+          <div>
+            <h3><em>Experiências</em></h3>
+            <p>Cada dia traz materiais soltos, convites abertos e tempo sem pressa para que o aprendizado aconteça.</p>
+          </div>
+        </li>
+        <li class="method__item">
+          <span class="method__num">04</span>
+          <div>
+            <h3><em>Natureza</em></h3>
+            <p>Terra, água, vento, sol. A natureza não é cenário, é parceira — e dita o ritmo da nossa rotina.</p>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="cta" id="visita">
+  <span class="cta__shape cta__shape--1" aria-hidden="true"></span>
+  <span class="cta__shape cta__shape--2" aria-hidden="true"></span>
+  <span class="cta__shape cta__shape--3" aria-hidden="true"></span>
+  <span class="cta__shape cta__shape--4" aria-hidden="true"></span>
+
+  <div class="container cta__inner reveal">
+    <h2 class="cta__title">Venha conhecer<br>o <em>Quintal</em>.</h2>
+    <p class="cta__sub">A melhor maneira de entender a escola é caminhar por ela. Marca um horário com a gente — sem formulário, sem compromisso.</p>
+    <a class="cta__btn" href="https://wa.me/5531995361003" target="_blank" rel="noopener">
+      Agendar uma visita
+      <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
+    <div>
+      <span class="cta__hand">a gente responde rápido!</span>
+    </div>
+    <p class="cta__meta">
+      <span>Ipatinga, MG</span> · seg–sex · 7h30 às 17h30
+    </p>
   </div>
 </section>
 
@@ -594,188 +344,40 @@
      FOOTER
      ============================================================ -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <div class="footer__brand">
-        <a class="brand brand--img" href="#top" aria-label="Quintal Escola — início">
-          <img src="project/assets/logo-rainbow.png" alt="Quintal Escola" class="brand__logo brand__logo--footer">
-        </a>
-        <p class="footer__about">
-          Educação infantil Reggio Emilia em Ipatinga, MG. Cinco anos cuidando de pequenos exploradores — dos 6 meses aos 5 anos.
-        </p>
-      </div>
-
-      <div>
-        <h5>Navegar</h5>
-        <ul>
-          <li><a href="#filosofia">Filosofia</a></li>
-          <li><a href="#abordagem">Abordagem</a></li>
-          <li><a href="#vivencias">Vivências</a></li>
-          <li><a href="#faixas">Faixas etárias</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h5>Falar com a gente</h5>
-        <ul>
-          <li><a href="https://wa.me/5531995361003" target="_blank" rel="noopener">WhatsApp · (31) 99536-1003</a></li>
-          <li><a href="https://instagram.com/feitosdecem" target="_blank" rel="noopener"><svg width="14" height="14" style="vertical-align:-2px;margin-right:4px"><use href="#i-instagram"/></svg> @feitosdecem</a></li>
-          <li><a href="mailto:contato@quintalescola.com.br">contato@quintalescola.com.br</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <span>© 2026 Quintal Escola · Ipatinga, MG</span>
-      <span class="hand">feito com cem linguagens.</span>
-    </div>
+  <div class="container footer__inner">
+    <span class="footer__brand">quintal</span>
+    <nav class="footer__links">
+      <a href="#filosofia">Filosofia</a>
+      <a href="#valores">A escola</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="https://wa.me/5531995361003" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/quintalescola" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <span class="footer__copy">© 2026 · feito devagar</span>
   </div>
 </footer>
 
 
 <!-- ============================================================
-     TWEAKS PANEL (custom, vanilla)
-     ============================================================ -->
-<aside class="tweaks-panel" id="tweaksPanel" aria-hidden="true">
-  <div class="tweaks-panel__head">
-    <h4>Tweaks</h4>
-    <button class="tweaks-panel__close" id="tweaksClose" aria-label="Fechar">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-    </button>
-  </div>
-
-  <div class="tweak">
-    <label>Tipografia display</label>
-    <div class="tweak-options" data-tweak="displayFont">
-      <button data-value="Fraunces">Fraunces</button>
-      <button data-value="Playfair">Playfair</button>
-      <button data-value="HeyWow">HeyWow</button>
-    </div>
-  </div>
-
-  <div class="tweak">
-    <label>Cor primária</label>
-    <div class="tweak-swatches" data-tweak="primary">
-      <button class="tweak-swatch" data-value="#C4622D" style="background:#C4622D" title="Terracota"></button>
-      <button class="tweak-swatch" data-value="#EC5212" style="background:#EC5212" title="Tangerine FdC"></button>
-      <button class="tweak-swatch" data-value="#A8552B" style="background:#A8552B" title="Castanho terroso"></button>
-      <button class="tweak-swatch" data-value="#D97757" style="background:#D97757" title="Rosa-tijolo"></button>
-    </div>
-  </div>
-
-  <div class="tweak">
-    <label>Densidade ilustrações</label>
-    <div class="tweak-options" data-tweak="motifDensity">
-      <button data-value="low">Mín.</button>
-      <button data-value="medium">Médio</button>
-      <button data-value="high">Abusar</button>
-    </div>
-  </div>
-
-  <div class="tweak tweak-toggle">
-    <label style="margin:0">Grain de papel</label>
-    <button data-tweak-toggle="grain" aria-label="Toggle grain"></button>
-  </div>
-</aside>
-
-
-<!-- ============================================================
-     APP SCRIPT
+     SCRIPT
      ============================================================ -->
 <script>
-/*EDITMODE-BEGIN*/const TWEAK_DEFAULTS = {
-  "displayFont": "Fraunces",
-  "primary": "#C4622D",
-  "motifDensity": "medium",
-  "heroVariant": "A",
-  "quiltHero": false,
-  "grain": true
-}/*EDITMODE-END*/;
-
 (function () {
-  // ---------- Mobile menu ----------
+  /* ---------- Mobile nav ---------- */
   const navToggle = document.getElementById('navToggle');
   const nav = document.getElementById('nav');
-  navToggle.addEventListener('click', () => nav.classList.toggle('open'));
-  nav.addEventListener('click', (e) => { if (e.target.tagName === 'A') nav.classList.remove('open'); });
+  if (navToggle) {
+    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.addEventListener('click', (e) => { if (e.target.tagName === 'A') nav.classList.remove('open'); });
+  }
 
-  // ---------- Scroll reveal ----------
+  /* ---------- Scroll reveal ---------- */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // ---------- Testimonials marquee (continuous, no loop-back) ----------
-  const track = document.getElementById('tTrack');
-  if (track) {
-    const original = track.innerHTML;
-    track.innerHTML = original + original; // duplicate for seamless loop
-  }
-
-  // ---------- Age cards flip ----------
-  document.querySelectorAll('.age-card').forEach(card => {
-    const toggle = () => {
-      const flipped = card.classList.toggle('flipped');
-      card.setAttribute('aria-pressed', String(flipped));
-    };
-    card.addEventListener('click', toggle);
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-    });
-  });
-
-  // ---------- Tweaks ----------
-  const state = Object.assign({}, TWEAK_DEFAULTS);
-
-  function applyTweaks() {
-    const body = document.body;
-    body.dataset.grain = String(state.grain);
-    body.dataset.quiltHero = String(state.quiltHero || state.heroVariant === 'B');
-    body.dataset.motifDensity = state.motifDensity;
-    body.dataset.heroVariant = state.heroVariant;
-
-    // Display font
-    const fontMap = {
-      'Fraunces': "'Fraunces', Georgia, serif",
-      'Playfair': "'Playfair Display', Georgia, serif",
-      'HeyWow':   "'HeyWow', system-ui, sans-serif",
-    };
-    document.documentElement.style.setProperty('--display-font', fontMap[state.displayFont] || fontMap.Fraunces);
-
-    // Primary color + derived
-    document.documentElement.style.setProperty('--primary', state.primary);
-    document.documentElement.style.setProperty('--primary-deep', shade(state.primary, -28));
-    document.documentElement.style.setProperty('--primary-soft', shade(state.primary, 30));
-
-    // Render hero quilt if needed
-    renderHeroQuilt();
-
-    // Sync UI
-    syncUI();
-    persist();
-  }
-
-  function syncUI() {
-    document.querySelectorAll('[data-tweak]').forEach(group => {
-      const key = group.dataset.tweak;
-      group.querySelectorAll('button').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.value === String(state[key]));
-      });
-    });
-    document.querySelectorAll('[data-tweak-toggle]').forEach(btn => {
-      const key = btn.dataset.tweakToggle;
-      btn.classList.toggle('on', !!state[key]);
-    });
-  }
-
-  function persist() {
-    try {
-      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: state }, '*');
-    } catch (_) {}
-  }
-
-  // Color helper — shade hex by integer percent (-100..100)
+  /* ---------- Color tokens (design defaults) ---------- */
   function shade(hex, pct) {
     const c = hex.replace('#','');
     const n = parseInt(c, 16);
@@ -788,125 +390,15 @@
     return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
   }
 
-  // Wire option buttons
-  document.querySelectorAll('[data-tweak] button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.parentElement.dataset.tweak;
-      state[key] = btn.dataset.value;
-      applyTweaks();
-    });
-  });
-  document.querySelectorAll('[data-tweak-toggle]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.dataset.tweakToggle;
-      state[key] = !state[key];
-      applyTweaks();
-    });
-  });
-
-  // ---------- Edit-mode protocol ----------
-  const panel = document.getElementById('tweaksPanel');
-  const closeBtn = document.getElementById('tweaksClose');
-  function openPanel() { panel.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); }
-  function closePanel() {
-    panel.classList.remove('open');
-    panel.setAttribute('aria-hidden', 'true');
-    try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (_) {}
-  }
-  closeBtn.addEventListener('click', closePanel);
-
-  window.addEventListener('message', (e) => {
-    if (!e.data || !e.data.type) return;
-    if (e.data.type === '__activate_edit_mode') openPanel();
-    if (e.data.type === '__deactivate_edit_mode') closePanel();
-  });
-
-  try {
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-  } catch (_) {}
-
-  // ---------- Quilt overlay renderer ----------
-  function renderHeroQuilt() {
-    const container = document.getElementById('heroQuilt');
-    if (!container) return;
-    const quiltOn = state.quiltHero || state.heroVariant === 'B';
-    if (!quiltOn) { container.innerHTML = ''; return; }
-    if (container.dataset.rendered === 'yes') return;
-
-    const palette = ['#C4622D', '#F4B73B', '#6FA84A', '#4A6741', '#EFE6D5', '#2C1A0E', '#FF8787', '#77C6B3'];
-    const motifs = ['heart','wave','asterisk','spiral','sun','leaf'];
-    const cols = 8, rows = 6;
-    let s = 0;
-    function r(){ s = (s * 9301 + 49297) % 233280; return s/233280; }
-    s = 7 * 9301;
-
-    let grid = '<div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(' + cols + ',1fr);grid-template-rows:repeat(' + rows + ',1fr)">';
-    for (let i = 0; i < cols * rows; i++) {
-      const bg = palette[Math.floor(r() * palette.length)];
-      const others = palette.filter(c => c !== bg);
-      const fg = others[Math.floor(r() * others.length)];
-      const showMotif = r() > 0.32;
-      const motif = motifs[Math.floor(r() * motifs.length)];
-      grid += '<div style="background:' + bg + ';display:grid;place-items:center;overflow:hidden">';
-      if (showMotif) {
-        grid += '<svg viewBox="0 0 64 64" style="width:55%;height:55%;color:' + fg + '"><use href="#i-' + motif + '"/></svg>';
-      }
-      grid += '</div>';
-    }
-    grid += '</div>';
-    container.innerHTML = grid;
-    container.dataset.rendered = 'yes';
-  }
-
-  // ---------- Hero scroll parallax ----------
-  const heroBg = document.querySelector('.hero__bg');
-  if (heroBg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y < window.innerHeight * 1.5) {
-        heroBg.style.transform = `translateY(${y * 0.22}px)`;
-      }
-    }, { passive: true });
-  }
-
-  // ---------- INIT ----------
-  applyTweaks();
-
-  // Header hides while hero is in view, reappears on scroll past it
-  (function () {
-    const header = document.getElementById('header');
-    const hero   = document.querySelector('.hero');
-    if (!header || !hero) return;
-    header.style.transition = 'transform 300ms ease, opacity 300ms ease';
-    new IntersectionObserver(([e]) => {
-      const hide = e.isIntersecting;
-      header.style.transform    = hide ? 'translateY(-100%)' : '';
-      header.style.opacity      = hide ? '0' : '';
-      header.style.pointerEvents = hide ? 'none' : '';
-    }, { threshold: 0.1 }).observe(hero);
-  })();
-
-  // Mouse parallax on hero deco elements
-  (function heroDecoParallax() {
-    const deco = document.querySelector('.hero__deco');
-    if (!deco || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    let cx = 0, cy = 0, mx = 0, my = 0;
-    window.addEventListener('mousemove', e => {
-      mx = (e.clientX / window.innerWidth  - 0.5) * 14;
-      my = (e.clientY / window.innerHeight - 0.5) * 10;
-    }, { passive: true });
-    (function tick() {
-      cx += (mx - cx) * 0.03;
-      cy += (my - cy) * 0.03;
-      const flower = deco.querySelector('.hero__deco-flower');
-      const leaf   = deco.querySelector('.hero__deco-leaf');
-      if (flower) flower.style.transform =
-        `translateX(calc(-50% + ${(cx * 0.6).toFixed(1)}px)) translateY(${(cy * 0.5).toFixed(1)}px)`;
-      if (leaf) leaf.style.transform =
-        `translate(${(cx * -0.4).toFixed(1)}px, ${(cy * 0.3).toFixed(1)}px) rotate(${(cx * 0.08).toFixed(2)}deg)`;
-      requestAnimationFrame(tick);
-    })();
-  })();
+  const accent  = '#C4622D';
+  const methodBg = '#6E764B';
+  const root = document.documentElement;
+  root.style.setProperty('--sand-warm',  '#E0CDB1');
+  root.style.setProperty('--terracotta', accent);
+  root.style.setProperty('--terra-deep', shade(accent, -28));
+  root.style.setProperty('--olive',      methodBg);
+  root.style.setProperty('--olive-deep', shade(methodBg, -22));
+  root.style.setProperty('--font-display', "'Fraunces', Georgia, serif");
 })();
 </script>
 
