@@ -5,400 +5,324 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quintal — Um quintal maior que o mundo</title>
 <meta name="description" content="Educação infantil com abordagem Reggio Emilia em Ipatinga, MG. Da descoberta ao protagonismo — dos 6 meses aos 5 anos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="project/tokens.css">
 <link rel="stylesheet" href="project/styles.css">
-<script src="project/image-slot.js"></script>
+<script src="project/image-slot.js" defer></script>
 </head>
 <body>
 
-<!-- Shared SVG symbols -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="4" y1="12" x2="20" y2="12"/>
-      <polyline points="14 6 20 12 14 18"/>
-    </symbol>
-    <symbol id="i-flower" viewBox="0 0 64 64">
-      <g fill="currentColor">
-        <ellipse cx="32" cy="14" rx="8" ry="12"/>
-        <ellipse cx="50" cy="32" rx="12" ry="8"/>
-        <ellipse cx="32" cy="50" rx="8" ry="12"/>
-        <ellipse cx="14" cy="32" rx="12" ry="8"/>
-      </g>
-      <circle cx="32" cy="32" r="5" fill="#F6F0E5"/>
-    </symbol>
-    <symbol id="i-hand-arrow" viewBox="0 0 40 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M2 4 Q 16 22 34 12"/>
-      <polyline points="28 4 34 12 26 16"/>
-    </symbol>
-    <symbol id="i-curve-arrow" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M8 12 C 24 8, 60 18, 56 52"/>
-      <polyline points="44 44 56 52 64 40"/>
-    </symbol>
-  </defs>
-</svg>
-
+<!-- ============================================================
+     MOBILE NAV OVERLAY
+     ============================================================ -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+  <a href="#filosofia" class="mobile-nav__link">Filosofia</a>
+  <a href="#metodologia" class="mobile-nav__link">Metodologia</a>
+  <a href="#valores" class="mobile-nav__link">Valores</a>
+  <a href="#visita" class="mobile-nav__link">Agendar Visita</a>
+</nav>
 
 <!-- ============================================================
      HEADER
      ============================================================ -->
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="#top">
-      quintal<small>Ipatinga · MG</small>
+      Quintal<small>Ipatinga · MG</small>
     </a>
-    <nav class="nav" id="nav">
-      <a href="#filosofia">Filosofia</a>
-      <a href="#valores">A escola</a>
-      <a href="#metodologia">Metodologia</a>
-      <a href="#visita">Visita</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span></button>
+    <ul class="site-nav">
+      <li><a href="#filosofia">Filosofia</a></li>
+      <li><a href="#metodologia">Metodologia</a></li>
+      <li><a href="#valores">Valores</a></li>
+      <li><a href="#visita" class="nav-cta">Agendar Visita</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
-
 
 <!-- ============================================================
      HERO
      ============================================================ -->
 <section class="hero" id="top">
-  <div class="container">
-    <div class="hero__grid">
 
-      <!-- Left block -->
-      <div class="hero__left">
-        <div class="hero__ribbon">
-          <span>Escola Quintal</span>
-          <span>Reggio Emilia · Ipatinga, MG</span>
-        </div>
-
-        <h1 class="hero__title">
-          Um quintal<br>
-          <em>maior</em> que<br>
-          o mundo.
-        </h1>
-
-        <p class="hero__sub">
-          Educação infantil com abordagem Reggio Emilia, em Ipatinga.
-          <strong>Da descoberta ao protagonismo</strong> — no ritmo de cada criança, dos 6 meses aos 5 anos.
-        </p>
-
-        <div class="hero__bottom">
-          <a class="btn btn--terra" href="https://wa.me/5531995361003" target="_blank" rel="noopener">
-            Agendar uma visita
-            <svg class="btn__arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-          <span class="hero__hand">
-            <svg aria-hidden="true"><use href="#i-hand-arrow"/></svg>
-            é só um oi no WhatsApp
-          </span>
-        </div>
-
-        <!-- circular rotating stamp -->
-        <div class="hero__stamp" aria-hidden="true">
-          <svg viewBox="0 0 200 200">
-            <defs>
-              <path id="circ" d="M 100, 100 m -78, 0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/>
-            </defs>
-            <text fill="currentColor" font-family="Quicksand, sans-serif" font-size="13" font-weight="600" letter-spacing="3">
-              <textPath href="#circ">FEITO DEVAGAR · DESDE 2021 · CEM LINGUAGENS · </textPath>
-            </text>
-          </svg>
-          <div>
-            <strong>desde<br>2021</strong>
-            <span>cinco anos</span>
-          </div>
-        </div>
-
-        <svg class="hero__flower" aria-hidden="true"><use href="#i-flower"/></svg>
-      </div>
-
-      <!-- Right photo block -->
-      <div class="hero__right">
-        <span class="hero__tape" aria-hidden="true"></span>
-        <span class="hero__sticker-num">★ 6 m → 5 anos</span>
-        <div class="hero__photo-frame">
-          <image-slot
-            id="hero-photo"
-            shape="rounded"
-            radius="20"
-            placeholder="Foto principal · criança em contato com a natureza"
-            src="project/assets/hero-principal.png"></image-slot>
-        </div>
-        <span class="hero__caption">no quintal · ipatinga, mg</span>
-      </div>
-
+  <div class="hero__left">
+    <p class="hero__eyebrow reveal">Escola de Educação Infantil</p>
+    <h1 class="hero__title reveal reveal-delay-1">Um quintal maior que o mundo</h1>
+    <p class="hero__sub reveal reveal-delay-2">Aprendizagem viva, curiosidade sem limite. Abordagem Reggio Emilia para crianças dos 6 meses aos 5 anos em Ipatinga, MG.</p>
+    <div class="hero__actions reveal reveal-delay-3">
+      <a href="#visita" class="btn-primary">Agendar visita</a>
+      <a href="#filosofia" class="btn-ghost">Nossa filosofia</a>
     </div>
-
-    <svg class="hero__doodle hero__doodle--arrow" aria-hidden="true"><use href="#i-curve-arrow"/></svg>
+    <p class="hero__badge reveal">Desde 2018 · Ipatinga · MG</p>
   </div>
-</section>
 
-
-<!-- ============================================================
-     EDITORIAL STRIP
-     ============================================================ -->
-<section class="editorial-strip" id="filosofia">
-  <div class="container">
-    <p class="editorial-strip__quote">
-      Aqui, o brincar é levado a sério.<br>
-      A gente acredita que a criança é <em>autora</em>,<br>
-      e que a natureza é a <u>primeira sala</u> de aula.
-    </p>
-    <span class="editorial-strip__sig">— escola quintal, ipatinga.</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     VALUES — three cards with personality
-     ============================================================ -->
-<section class="values" id="valores">
-  <div class="container">
-    <div class="values__head reveal">
-      <p class="eyebrow">O que nos move</p>
-      <h2>Três <em>gestos</em> que organizam<br>o nosso quintal.</h2>
-    </div>
-
-    <div class="values__grid">
-
-      <article class="value-card reveal">
-        <span class="value-card__badge">01 · um</span>
-        <div class="value-card__photo">
-          <image-slot
-            id="val-natureza"
-            shape="rounded"
-            radius="14"
-            placeholder="Natureza · folhas, terra, raiz"
-            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80&auto=format&fit=crop"></image-slot>
-        </div>
-        <h3 class="value-card__title"><em>Natureza</em><br>como currículo</h3>
-        <p class="value-card__text">Sair, sempre. Mãos na terra, pés descalços. O quintal é a primeira sala — não a última.</p>
-        <span class="value-card__hand">terra, água, vento, raiz</span>
-      </article>
-
-      <article class="value-card reveal">
-        <span class="value-card__badge">02 · dois</span>
-        <div class="value-card__photo">
-          <image-slot
-            id="val-investigacao"
-            shape="rounded"
-            radius="14"
-            placeholder="Investigação · mãos pesquisando"
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80&auto=format&fit=crop"></image-slot>
-        </div>
-        <h3 class="value-card__title"><em>Investigação</em><br>como caminho</h3>
-        <p class="value-card__text">Toda pergunta vira pesquisa. Documentamos os processos para tornar visível o pensamento das crianças.</p>
-        <span class="value-card__hand">por que? como? e se?</span>
-      </article>
-
-      <article class="value-card reveal">
-        <span class="value-card__badge">03 · três</span>
-        <div class="value-card__photo">
-          <image-slot
-            id="val-protagonismo"
-            shape="rounded"
-            radius="14"
-            placeholder="Protagonismo · criança autora"
-            src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80&auto=format&fit=crop"></image-slot>
-        </div>
-        <h3 class="value-card__title"><em>Protagonismo</em><br>como verbo</h3>
-        <p class="value-card__text">Cada um no seu ritmo, com tempo de terminar o que começou. Aqui ninguém apressa a infância.</p>
-        <span class="value-card__hand">a criança é autora</span>
-      </article>
-
+  <div class="hero__right">
+    <img
+      class="hero__photo"
+      src="project/assets/hero-principal.png"
+      alt="Crianças explorando o quintal da escola"
+      width="1200"
+      height="900"
+    >
+    <div class="hero__photo-label reveal">
+      <strong>Quintal Escola</strong>
+      <span>Reggio Emilia · Ipatinga</span>
     </div>
   </div>
+
 </section>
 
-
 <!-- ============================================================
-     GALLERY
+     EDITORIAL 2-COL  (#filosofia)
      ============================================================ -->
-<section class="gallery">
-  <div class="container">
-    <div class="gallery__head reveal">
-      <div>
-        <p class="eyebrow eyebrow--olive">Caderno do quintal</p>
-        <h2>Pequenos dias <em>no quintal</em>.</h2>
-      </div>
-      <p>Cenas comuns que, juntas, formam um modo de viver a infância — sem pressa, com mãos sujas e olhos atentos.</p>
+<section id="filosofia">
+
+  <!-- Organic wave from hero -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="var(--dusty-lilac)">
+      <path d="M0,0 C360,60 1080,0 1440,40 L1440,0 Z"/>
+    </svg>
+  </div>
+
+  <div class="editorial">
+    <div class="editorial__img-wrap reveal">
+      <img
+        class="editorial__img"
+        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80"
+        alt="Criança explorando materiais naturais"
+        width="800"
+        height="1000"
+      >
+      <span class="editorial__img-tag">Reggio Emilia</span>
     </div>
 
-    <div class="gallery__grid">
-      <div class="gallery__item gallery__item--a reveal">
-        <image-slot id="g-1" shape="rounded" radius="16"
-          placeholder="Foto principal"
-          src="https://images.unsplash.com/photo-1564429097439-e4dc8b8d8e85?w=1200&q=80&auto=format&fit=crop"></image-slot>
-        <span class="gallery__caption gallery__caption--1">no ateliê!</span>
-      </div>
-      <div class="gallery__item gallery__item--b reveal">
-        <image-slot id="g-2" shape="rounded" radius="16"
-          placeholder="Detalhe · mãos, tinta, papel"
-          src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=900&q=80&auto=format&fit=crop"></image-slot>
-        <span class="gallery__caption gallery__caption--2">mãos pequenas</span>
-      </div>
-      <div class="gallery__item gallery__item--c reveal">
-        <image-slot id="g-3" shape="rounded" radius="16"
-          placeholder="Vivência · horta, água, terra"
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80&auto=format&fit=crop"></image-slot>
-      </div>
-      <div class="gallery__item gallery__item--d reveal">
-        <image-slot id="g-4" shape="rounded" radius="16"
-          placeholder="Retrato · olhar curioso"
-          src="https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?w=800&q=80&auto=format&fit=crop"></image-slot>
-      </div>
-      <div class="gallery__item gallery__item--e reveal">
-        <image-slot id="g-5" shape="rounded" radius="16"
-          placeholder="Cena ampla · quintal e luz"
-          src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1200&q=80&auto=format&fit=crop"></image-slot>
-        <span class="gallery__caption gallery__caption--3">o quintal</span>
-      </div>
+    <div class="editorial__content">
+      <p class="editorial__eyebrow reveal">Nossa filosofia</p>
+      <h2 class="editorial__title reveal reveal-delay-1">A criança como protagonista da sua própria história</h2>
+      <p class="editorial__body reveal reveal-delay-2">
+        No Quintal, acreditamos que cada criança carrega em si uma curiosidade inata e uma capacidade extraordinária de aprender com o mundo ao redor. Nossa abordagem, inspirada na pedagogia Reggio Emilia, coloca a criança no centro — escutando, investigando e criando com autonomia.
+      </p>
+      <blockquote class="editorial__quote reveal reveal-delay-3">
+        "A criança tem cem linguagens. A escola e a cultura lhe roubam noventa e nove."
+        <cite style="display:block; margin-top:12px; font-size:var(--t-xs); letter-spacing:var(--tracking-caps); text-transform:uppercase; color:var(--stone); font-style:normal;">— Loris Malaguzzi</cite>
+      </blockquote>
     </div>
   </div>
+
 </section>
 
-
 <!-- ============================================================
-     METHODOLOGY
+     QUOTE CARD — missão
      ============================================================ -->
-<section class="method" id="metodologia">
-  <span class="method__shape method__shape--1" aria-hidden="true"></span>
-  <span class="method__shape method__shape--2" aria-hidden="true"></span>
-
-  <div class="container">
-    <div class="method__grid">
-
-      <div class="method__intro reveal">
-        <p class="eyebrow">A nossa metodologia</p>
-        <h2>Reggio Emilia,<br>traduzido para o <em>chão da escola</em>.</h2>
-        <p>A gente não recebe a criança como um copo a ser preenchido — recebe um sujeito capaz, curioso, cheio de teorias sobre o mundo.</p>
-        <p>Nosso trabalho é criar espaço, materiais e tempo para que essas teorias floresçam. Sem apostila, sem fila, sem hora de ficar quieto.</p>
-        <span class="method__sig">— a gente caminha junto.</span>
-      </div>
-
-      <ol class="method__list reveal">
-        <li class="method__item">
-          <span class="method__num">01</span>
-          <div>
-            <h3><em>Escuta</em></h3>
-            <p>Antes de ensinar, ouvir. Cada gesto, cada silêncio, cada pergunta — tudo é texto a ser lido com atenção.</p>
-          </div>
-        </li>
-        <li class="method__item">
-          <span class="method__num">02</span>
-          <div>
-            <h3><em>Autonomia</em></h3>
-            <p>A criança decide, escolhe, tenta, recomeça. O educador acompanha sem atalhar o caminho.</p>
-          </div>
-        </li>
-        <li class="method__item">
-          <span class="method__num">03</span>
-          <div>
-            <h3><em>Experiências</em></h3>
-            <p>Cada dia traz materiais soltos, convites abertos e tempo sem pressa para que o aprendizado aconteça.</p>
-          </div>
-        </li>
-        <li class="method__item">
-          <span class="method__num">04</span>
-          <div>
-            <h3><em>Natureza</em></h3>
-            <p>Terra, água, vento, sol. A natureza não é cenário, é parceira — e dita o ritmo da nossa rotina.</p>
-          </div>
-        </li>
-      </ol>
-
+<div class="quote-section">
+  <div class="quote-card reveal">
+    <div class="quote-card__text">
+      <span class="quote-card__mark">"</span>
+      <p class="quote-card__quote">
+        Queremos que cada criança saia daqui sabendo que o mundo é seu para explorar, perguntar e transformar.
+      </p>
+      <p class="quote-card__author">Fundadora · Quintal Escola</p>
+    </div>
+    <div class="quote-card__portrait-wrap">
+      <img
+        class="quote-card__portrait"
+        src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&q=80"
+        alt="Fundadora do Quintal"
+        width="200"
+        height="200"
+      >
     </div>
   </div>
-</section>
-
+</div>
 
 <!-- ============================================================
-     FINAL CTA
+     VALORES  (#valores)
      ============================================================ -->
-<section class="cta" id="visita">
-  <span class="cta__shape cta__shape--1" aria-hidden="true"></span>
-  <span class="cta__shape cta__shape--2" aria-hidden="true"></span>
-  <span class="cta__shape cta__shape--3" aria-hidden="true"></span>
-  <span class="cta__shape cta__shape--4" aria-hidden="true"></span>
+<section class="valores" id="valores">
 
-  <div class="container cta__inner reveal">
-    <h2 class="cta__title">Venha conhecer<br>o <em>Quintal</em>.</h2>
-    <p class="cta__sub">A melhor maneira de entender a escola é caminhar por ela. Marca um horário com a gente — sem formulário, sem compromisso.</p>
-    <a class="cta__btn" href="https://wa.me/5531995361003" target="_blank" rel="noopener">
-      Agendar uma visita
-      <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
+  <!-- Geometric color block -->
+  <div class="valores__geo" aria-hidden="true">
+    <div class="geo-block geo-block--mustard">
+      <span class="geo-block__label">Natureza</span>
+    </div>
+    <div class="geo-block geo-block--olive">
+      <span class="geo-block__label">Investigação</span>
+    </div>
+    <div class="geo-block geo-block--terracotta">
+      <span class="geo-block__label">Protagonismo</span>
+    </div>
+  </div>
+
+  <div class="valores__header">
+    <p class="valores__eyebrow reveal">Nossos pilares</p>
+    <h2 class="valores__title reveal reveal-delay-1">O que acreditamos</h2>
+  </div>
+
+  <div class="valores__cards" id="metodologia">
+
+    <div class="valor-card reveal">
+      <div class="valor-card__img-wrap">
+        <img
+          class="valor-card__img"
+          src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&q=80"
+          alt="Criança em contato com a natureza"
+          width="600"
+          height="600"
+        >
+        <span class="valor-card__accent" aria-hidden="true">01</span>
+      </div>
+      <span class="valor-card__number">01</span>
+      <h3 class="valor-card__name">Natureza</h3>
+      <p class="valor-card__desc">O quintal é o primeiro laboratório. Terra, água, folha e vento ensinam com mais verdade do que qualquer livro didático.</p>
+    </div>
+
+    <div class="valor-card reveal reveal-delay-1">
+      <div class="valor-card__img-wrap">
+        <img
+          class="valor-card__img"
+          src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
+          alt="Criança em processo de investigação"
+          width="600"
+          height="600"
+        >
+        <span class="valor-card__accent" aria-hidden="true">02</span>
+      </div>
+      <span class="valor-card__number">02</span>
+      <h3 class="valor-card__name">Investigação</h3>
+      <p class="valor-card__desc">Perguntas têm mais valor que respostas prontas. Incentivamos o "por quê?" e o "e se?" como ferramentas de pensamento.</p>
+    </div>
+
+    <div class="valor-card reveal reveal-delay-2">
+      <div class="valor-card__img-wrap">
+        <img
+          class="valor-card__img"
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80"
+          alt="Criança protagonista do aprendizado"
+          width="600"
+          height="600"
+        >
+        <span class="valor-card__accent" aria-hidden="true">03</span>
+      </div>
+      <span class="valor-card__number">03</span>
+      <h3 class="valor-card__name">Protagonismo</h3>
+      <p class="valor-card__desc">A criança decide, escolhe, cria e resolve. Nossa função é criar espaço para que isso aconteça com segurança e afeto.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     CTA  (#visita)
+     ============================================================ -->
+<section class="cta-section" id="visita">
+  <div class="cta-section__inner">
+    <p class="cta-section__eyebrow reveal">Venha nos conhecer</p>
+    <h2 class="cta-section__title reveal reveal-delay-1">Seu filho merece um quintal maior que o mundo</h2>
+    <p class="cta-section__sub reveal reveal-delay-2">Agende uma visita e conheça nossa proposta pedagógica ao vivo. Atendemos crianças de 6 meses a 5 anos.</p>
+    <a
+      href="https://wa.me/5531999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Quintal%20Escola."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-whatsapp reveal reveal-delay-3"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Falar no WhatsApp
     </a>
-    <div>
-      <span class="cta__hand">a gente responde rápido!</span>
-    </div>
-    <p class="cta__meta">
-      <span>Ipatinga, MG</span> · seg–sex · 7h30 às 17h30
-    </p>
   </div>
 </section>
-
 
 <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <span class="footer__brand">quintal</span>
-    <nav class="footer__links">
-      <a href="#filosofia">Filosofia</a>
-      <a href="#valores">A escola</a>
-      <a href="#metodologia">Metodologia</a>
-      <a href="https://wa.me/5531995361003" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://instagram.com/quintalescola" target="_blank" rel="noopener">Instagram</a>
-    </nav>
-    <span class="footer__copy">© 2026 · feito devagar</span>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+
+      <div>
+        <span class="footer-brand">Quintal</span>
+        <p class="footer-tagline">Educação infantil com abordagem Reggio Emilia em Ipatinga, MG. Da descoberta ao protagonismo.</p>
+      </div>
+
+      <div>
+        <p class="footer-nav-title">Navegação</p>
+        <ul class="footer-nav">
+          <li><a href="#filosofia">Filosofia</a></li>
+          <li><a href="#metodologia">Metodologia</a></li>
+          <li><a href="#valores">Valores</a></li>
+          <li><a href="#visita">Agendar Visita</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <p class="footer-nav-title">Contato</p>
+        <p>Ipatinga, Minas Gerais</p>
+        <p><a href="mailto:oi@quintalescola.com.br">oi@quintalescola.com.br</a></p>
+        <p><a href="https://wa.me/5531999999999" target="_blank" rel="noopener">WhatsApp</a></p>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="footer-copy">© 2025 Quintal Escola · Todos os direitos reservados</p>
+      <p class="footer-reggio">Inspirada na pedagogia de Loris Malaguzzi</p>
+    </div>
   </div>
 </footer>
 
-
-<!-- ============================================================
-     SCRIPT
-     ============================================================ -->
 <script>
 (function () {
-  /* ---------- Mobile nav ---------- */
-  const navToggle = document.getElementById('navToggle');
-  const nav = document.getElementById('nav');
-  if (navToggle) {
-    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
-    nav.addEventListener('click', (e) => { if (e.target.tagName === 'A') nav.classList.remove('open'); });
-  }
+  'use strict';
 
-  /* ---------- Scroll reveal ---------- */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+  revealEls.forEach((el) => observer.observe(el));
 
-  /* ---------- Color tokens (design defaults) ---------- */
-  function shade(hex, pct) {
-    const c = hex.replace('#','');
-    const n = parseInt(c, 16);
-    let r = (n >> 16) & 0xff, g = (n >> 8) & 0xff, b = n & 0xff;
-    const t = pct < 0 ? 0 : 255;
-    const p = Math.abs(pct) / 100;
-    r = Math.round((t - r) * p + r);
-    g = Math.round((t - g) * p + g);
-    b = Math.round((t - b) * p + b);
-    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-  }
+  // Header scroll state
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
 
-  const accent  = '#C4622D';
-  const methodBg = '#6E764B';
-  const root = document.documentElement;
-  root.style.setProperty('--sand-warm',  '#E0CDB1');
-  root.style.setProperty('--terracotta', accent);
-  root.style.setProperty('--terra-deep', shade(accent, -28));
-  root.style.setProperty('--olive',      methodBg);
-  root.style.setProperty('--olive-deep', shade(methodBg, -22));
-  root.style.setProperty('--font-display', "'Fraunces', Georgia, serif");
+  // Mobile nav toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close mobile nav on link click
+  mobileNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
 })();
 </script>
 
